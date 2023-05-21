@@ -1,0 +1,11 @@
+<div class="container">
+  <form (ngSubmit)="submitForm()" [formGroup]="verificationTokenForm">
+    <mat-form-field>
+      <mat-label>Token weryfikacyjny</mat-label>
+      <input formControlName="verificationToken" matInput placeholder="Wklej token otrzymany w wiadomości email"
+             type="text">
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Aktywuj</button>
+  </form>
+</div>
