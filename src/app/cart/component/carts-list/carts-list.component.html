@@ -1,0 +1,19 @@
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Id:</th>
+      <th>Umup:</th>
+      <th>Opis:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="navigateToDetails(cart.id)" *ngFor="let cart of carts">
+      <td>{{cart.id}}</td>
+      <td>{{cart.umupNumber}}</td>
+      <td>{{cart.description}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

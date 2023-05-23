@@ -10,7 +10,7 @@ import {ConfirmationDialogComponent} from "./component/confirmation-dialog/confi
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
@@ -42,7 +42,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatInputModule,
     MatTableModule,
     MatTabsModule,
-
+    FormsModule,
   ],
   exports: [
     PageComponent,
@@ -58,6 +58,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatInputModule,
     MatTableModule,
     MatTabsModule,
+    FormsModule
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {width: "1000px"}}]
 })
