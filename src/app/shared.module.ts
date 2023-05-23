@@ -9,6 +9,13 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {ConfirmationDialogComponent} from "./component/confirmation-dialog/confirmation-dialog.component";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
+import {MatInputModule} from "@angular/material/input";
+import {MatTableModule} from "@angular/material/table";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -24,12 +31,33 @@ import {MatButtonModule} from "@angular/material/button";
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatCardModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule,
+
   ],
   exports: [
     PageComponent,
     YesOrNoPipe,
     CustomDatePipe,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatCardModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatTabsModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {width: "1000px"}}]
 })
