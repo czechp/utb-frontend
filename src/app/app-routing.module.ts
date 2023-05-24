@@ -15,6 +15,7 @@ import {AdminGuard} from "./configuration/guards/admin.guard.service";
 import {UserDetailsPageComponent} from "./authorization/pages/user-details-page/user-details-page.component";
 import {CartsListPageComponent} from "./cart/pages/carts-list-page/carts-list-page.component";
 import {CartDetailsPageComponent} from "./cart/pages/cart-details-page/cart-details-page.component";
+import {CartAddPageComponent} from "./cart/pages/cart-add-page/cart-add-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: "user-details/:id", component: UserDetailsPageComponent, canActivate: [LoginGuard, AdminGuard]},
   {path: "carts", component: CartsListPageComponent, canActivate: [LoginGuard]},
   {path: "cart-details/:id", component: CartDetailsPageComponent, canActivate: [LoginGuard]},
+  {path: "cart-add", component: CartAddPageComponent, canActivate: [LoginGuard]},
   {path: "forbidden", component: ForbiddenComponent},
   {path: "login-required", component: LoginRequiredComponent},
   {path: "not-found", component: PageNotFoundComponent},

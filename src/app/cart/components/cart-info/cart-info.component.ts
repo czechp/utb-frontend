@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CartModel} from "../../model/cart.model";
+import {CartModel} from "../../models/cart.model";
 
 @Component({
   selector: 'app-cart-info',

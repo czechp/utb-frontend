@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BACKEND_URL} from "../../configuration/URL";
-import {CartModel} from "../model/cart.model";
+import {CartModel} from "../models/cart.model";
 import {share} from "rxjs";
+import {CartAddModel} from "../models/cart-add.model";
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class CartHttpService {
 
   public removeCart(cartId: number) {
     return this.httpClient.delete(`${BACKEND_URL}/carts/${cartId}`).pipe(share());
+  }
+
+  addCart(cartAddModel: CartAddModel) {
+    return this.httpClient.post(`${BACKEND_URL}/carts`, cartAddModel);
   }
 }

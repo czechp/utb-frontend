@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable} from "rxjs";
-import {CartModel} from "../../model/cart.model";
-import {CartHttpService} from "../../service/cart-http.service";
+import {CartModel} from "../../models/cart.model";
+import {CartHttpService} from "../../services/cart-http.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StatementService} from "../../../service/statement.service";
 

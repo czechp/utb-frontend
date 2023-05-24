@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {CartHttpService} from "../../service/cart-http.service";
+import {CartHttpService} from "../../services/cart-http.service";
 import {Observable} from "rxjs";
-import {CartModel} from "../../model/cart.model";
+import {CartModel} from "../../models/cart.model";
 
 @Component({
   selector: 'app-carts-list-page',
