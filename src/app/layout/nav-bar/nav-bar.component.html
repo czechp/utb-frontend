@@ -24,9 +24,9 @@
     <div class="dropdown">
       <button class="dropbtn" color="primary" mat-raised-button>Wózki</button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a [routerLink]="['/carts']">List wszystkich wózków</a>
+        <a [routerLink]="['/cart-add']">Dodaj wózek</a>
+
       </div>
     </div>
   </div>

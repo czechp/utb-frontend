@@ -1,0 +1,16 @@
+<div class="container">
+  <form (ngSubmit)="cartAddClicked()" [formGroup]="cartAddForm">
+    <mat-form-field>
+      <mat-label>UMUP:</mat-label>
+      <input formControlName="umupNumber" matInput type="text">
+      <mat-error *ngIf="cartAddForm.get('umupNumber')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error
+        *ngIf="cartAddForm.get('umupNumber')?.hasError('minlength')">{{ValidationMessages.minLength}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Opis:</mat-label>
+      <textarea cols="30" formControlName="description" matInput rows="2"></textarea>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Dodaj</button>
+  </form>
+</div>

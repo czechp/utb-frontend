@@ -20,6 +20,7 @@ import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared.module";
 import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
 import {AuthorizationInterceptor} from "./configuration/http/authorization.interceptor.service";
+import {CartModule} from "./cart/cart.module";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {AuthorizationInterceptor} from "./configuration/http/authorization.inter
     BrowserAnimationsModule,
     MatButtonModule,
     AuthorizationModule,
+    CartModule,
     SharedModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],
