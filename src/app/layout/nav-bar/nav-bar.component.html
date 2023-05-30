@@ -14,9 +14,7 @@
     <div class="dropdown">
       <button class="dropbtn" color="primary" mat-raised-button>Systemy</button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a [routerLink]="['/charging-system-create']">Dodaj system</a>
       </div>
     </div>
 
@@ -26,7 +24,6 @@
       <div class="dropdown-content">
         <a [routerLink]="['/carts']">List wszystkich wózków</a>
         <a [routerLink]="['/cart-add']">Dodaj wózek</a>
-
       </div>
     </div>
   </div>
