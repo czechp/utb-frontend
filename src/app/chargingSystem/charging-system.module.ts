@@ -9,8 +9,10 @@ import {ChargingSystemsListComponent} from './components/charging-systems-list/c
 import {
   ChargingSystemDetailsPageComponent
 } from './pages/charging-system-details-page/charging-system-details-page.component';
-import {ChargingSystemInfoComponent} from './components/charging-system-info/charging-system-info.component';
 import {ChargersListComponent} from './components/chargers-list/chargers-list.component';
+import {
+  ChargingSystemAssignChargerComponent
+} from './components/charging-system-assign-charger/charging-system-assign-charger.component';
 
 
 @NgModule({
@@ -19,8 +21,8 @@ import {ChargersListComponent} from './components/chargers-list/chargers-list.co
     ChargingSystemAddFormComponent,
     ChargingSystemsListComponent,
     ChargingSystemDetailsPageComponent,
-    ChargingSystemInfoComponent,
     ChargersListComponent,
+    ChargingSystemAssignChargerComponent,
   ],
   exports: [
     ChargingSystemsListComponent

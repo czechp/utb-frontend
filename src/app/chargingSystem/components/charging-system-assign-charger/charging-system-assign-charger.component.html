@@ -1,0 +1,11 @@
+<div class="container">
+  <form (ngSubmit)="assignChargerClick()" [formGroup]="assignChargerForm">
+    <mat-form-field>
+      <mat-label>Pozycja prostownika</mat-label>
+      <mat-select formControlName="chargerPosition">
+        <mat-option *ngFor="let position of positions" [value]="position">{{position}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Dodaj prostownik</button>
+  </form>
+</div>
