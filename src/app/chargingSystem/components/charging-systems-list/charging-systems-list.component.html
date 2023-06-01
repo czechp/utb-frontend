@@ -1,0 +1,21 @@
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Status</th>
+      <th>Nazwa</th>
+      <th>PLC IP</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="navigateToDetails(system.id)" *ngFor="let system of systems">
+      <td>
+        <fa-icon *ngIf="!system.error" [icon]="okIcon" size="2x" style="color: var(--success)"/>
+        <fa-icon *ngIf="system.error" [icon]="errorIcon" size="2x" style="color: var(--danger)"/>
+      </td>
+      <td>{{system.name}}</td>
+      <td>{{system.address}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

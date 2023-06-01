@@ -1,0 +1,6 @@
+.chargingInProgress {
+  background-color: var(--primary);
+  color: var(--backgroundColor);
+}
+
+

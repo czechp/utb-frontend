@@ -1,0 +1,3 @@
+<app-page [loaded]="!!(chargingSystem$|async)" title="System ładowania">
+  <app-charging-system-info [chargingSystem]="chargingSystem$ | async"/>
+</app-page>
