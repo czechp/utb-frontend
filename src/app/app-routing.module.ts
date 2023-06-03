@@ -16,6 +16,12 @@ import {UserDetailsPageComponent} from "./authorization/pages/user-details-page/
 import {CartsListPageComponent} from "./cart/pages/carts-list-page/carts-list-page.component";
 import {CartDetailsPageComponent} from "./cart/pages/cart-details-page/cart-details-page.component";
 import {CartAddPageComponent} from "./cart/pages/cart-add-page/cart-add-page.component";
+import {
+  ChargingSystemCreatePageComponent
+} from "./chargingSystem/pages/charging-system-create-page/charging-system-create-page.component";
+import {
+  ChargingSystemDetailsPageComponent
+} from "./chargingSystem/pages/charging-system-details-page/charging-system-details-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -27,6 +33,8 @@ const routes: Routes = [
   {path: "carts", component: CartsListPageComponent, canActivate: [LoginGuard]},
   {path: "cart-details/:id", component: CartDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "cart-add", component: CartAddPageComponent, canActivate: [LoginGuard]},
+  {path: "charging-system-create", component: ChargingSystemCreatePageComponent, canActivate: [LoginGuard]},
+  {path: "charging-system-details/:id", component: ChargingSystemDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "forbidden", component: ForbiddenComponent},
   {path: "login-required", component: LoginRequiredComponent},
   {path: "not-found", component: PageNotFoundComponent},

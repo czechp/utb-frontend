@@ -1,0 +1,33 @@
+<div class="container">
+  <form (ngSubmit)="formSubmittedClick()" [formGroup]="chargingSystemCreateForm">
+    <mat-form-field>
+      <mat-label>Nazwa:</mat-label>
+      <input formControlName="name" matInput type="text">
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('name')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('name')?.hasError('minlength')">{{ValidationMessages.minLength}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Adres IP sterownika PLC</mat-label>
+      <input formControlName="plcAddress" matInput type="text">
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('plcAddress')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('plcAddress')?.hasError('minlength')">{{ValidationMessages.minLength}}</mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Maska podsieci</mat-label>
+      <input formControlName="networkMask" matInput type="text">
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('networkMask')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error
+        *ngIf="chargingSystemCreateForm.get('networkMask')?.hasError('minlength')">{{ValidationMessages.minLength}}</mat-error>
+
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Dodaj</button>
+  </form>
+</div>
