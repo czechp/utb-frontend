@@ -34,6 +34,5 @@
   left: 0;
   top: 0;
   padding: 0 1rem;
-  background-color: var(--backgroundColor);
   z-index: 999;
 }
