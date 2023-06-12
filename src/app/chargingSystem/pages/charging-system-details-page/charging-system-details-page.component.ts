@@ -12,15 +12,21 @@ import {StatementService} from "../../../service/statement.service";
   styleUrls: ['./charging-system-details-page.component.css']
 })
 export class ChargingSystemDetailsPageComponent {
+  private chargingSystemId: number | undefined = undefined;
   chargingSystem$: Observable<ChargingSystemModel> | null = null;
   tabPosition = 0;
 
   constructor(private chargingSystemHttpService: ChargingSystemHttpService, private activatedRoute: ActivatedRoute, private statementService: StatementService) {
     this.activatedRoute.params.subscribe({
       next: (params) => {
-        this.chargingSystem$ = chargingSystemHttpService.findChargingSystemById(params["id"]);
+        this.chargingSystemId = params["id"];
+        this.getChargers()
       }
     })
+  }
+
+  getChargers = () => {
+    this.chargingSystem$ = this.chargingSystemHttpService.findChargingSystemById(this.chargingSystemId as number);
   }
 
   assignCharger(chargingSystemAssignChargerModel: ChargingSystemAssignChargerModel) {

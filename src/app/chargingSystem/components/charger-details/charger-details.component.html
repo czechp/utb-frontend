@@ -1,0 +1,2 @@
+<h1>Prostownik na pozycji {{(chargerWithCart$ | async)?.position}}</h1>
+<app-charger-remove (removeChargerEvent)="removeCharger($event)" [charger]="chargerWithCart$ | async"/>

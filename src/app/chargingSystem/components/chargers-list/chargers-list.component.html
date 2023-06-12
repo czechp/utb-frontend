@@ -8,7 +8,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let charger of chargers" [ngClass]="{chargingInProgress: charger.charging}">
+  <tr (click)="openDetailsDialog(charger.id)" *ngFor="let charger of chargers"
+      [ngClass]="{chargingInProgress: charger.charging}">
     <td>
       <fa-icon *ngIf="!charger.error" [icon]="okIcon" size="2x" style="color: var(--success)"/>
       <fa-icon *ngIf="charger.error" [icon]="errorIcon" size="2x" style="color: var(--danger)"/>
