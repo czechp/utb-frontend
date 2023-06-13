@@ -1,2 +1,7 @@
-<h1>Prostownik na pozycji {{(chargerWithCart$ | async)?.position}}</h1>
-<app-charger-remove (removeChargerEvent)="removeCharger($event)" [charger]="chargerWithCart$ | async"/>
+<mat-dialog-content>
+  <h1>Prostownik na pozycji {{(chargerWithCart$ | async)?.position}}</h1>
+  <app-charger-remove (removeChargerEvent)="removeCharger($event)" [charger]="chargerWithCart$ | async"/>
+  <app-charger-assign-cart (cartAssigned)="assignCartRequest($event)"/>
+  <app-charger-assigned-carts-list [assignedCarts]="(chargerWithCart$ | async)?.carts"/>
+
+</mat-dialog-content>

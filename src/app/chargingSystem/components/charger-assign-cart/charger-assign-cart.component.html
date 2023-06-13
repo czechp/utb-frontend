@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Przypisz wózek</h2>
+  <form (ngSubmit)="assignCart()" [formGroup]="assignCartForm">
+    <mat-form-field>
+      <mat-label>UMUP wózka</mat-label>
+      <mat-select formControlName="cartId">
+        <mat-option *ngFor="let cart of (carts$|async)" [value]="cart.id">{{cart.umupNumber}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Przypisz</button>
+  </form>
+</div>

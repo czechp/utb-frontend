@@ -6,6 +6,7 @@ import {share} from "rxjs";
 import {ChargingSystemModel} from "../models/charging-system.model";
 import {ChargingSystemAssignChargerModel} from "../models/charging-system-assign-charger.model";
 import {ChargerWithCartsModel} from "../models/charger-with-carts.model";
+import {ChargerAssignCartModel} from "../models/charger-assign-cart.model";
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,9 @@ export class ChargingSystemHttpService {
     };
     return this.httpClient.delete<void>(`${BACKEND_URL}/charging-systems/charger`, {body: requestBody})
       .pipe(share());
+  }
+
+  assignCartToCharger(chargerAssignCartModel: ChargerAssignCartModel) {
+    return this.httpClient.post<void>(`${BACKEND_URL}/charging-systems/charger/cart`, chargerAssignCartModel);
   }
 }

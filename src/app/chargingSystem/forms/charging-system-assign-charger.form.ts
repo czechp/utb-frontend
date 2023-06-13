@@ -9,4 +9,3 @@ export function createChargingSystemAssignChargerForm() {
     chargerPosition: new FormControl<number>(1, [Validators.required])
   });
 }
-
