@@ -7,6 +7,7 @@ import {StatementService} from "../../../service/statement.service";
 import {Router} from "@angular/router";
 import {ChargerModalData} from "../chargers-list/chargers-list.component";
 import {ChargerAssignCartModel} from "../../models/charger-assign-cart.model";
+import {ChargerDetachCartModel} from "../../models/charger-detach-cart.model";
 
 @Component({
   selector: 'app-charger-details',
@@ -60,5 +61,21 @@ export class ChargerDetailsComponent {
           this.chargerPosition = charger.position;
         }))
       );
+  }
+
+  detachCartRequest(cartId: number) {
+    const detachCartModel: ChargerDetachCartModel = {
+      systemId: this.systemId,
+      cartId: cartId,
+      chargerPosition: this.chargerPosition
+    };
+
+    this.chargingSystemHttpService.detachCart(detachCartModel)
+      .subscribe({
+        next: () => {
+          this.statementService.publicInfo("Wózek został usunięty z listy");
+          this.getChargerDetails();
+        }
+      })
   }
 }

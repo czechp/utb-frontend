@@ -2,6 +2,6 @@
   <h2>Przypisane wózki</h2>
   <p *ngFor="let cart of assignedCarts" class="cart">
     <span>{{cart.umupNumber}}</span>
-    <fa-icon [icon]="remove" class="removeIcon" size="2x"/>
+    <fa-icon (click)="detachCart(cart.id)" [icon]="remove" class="removeIcon" size="2x"/>
   </p>
 </div>

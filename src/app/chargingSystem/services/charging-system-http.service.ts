@@ -7,6 +7,7 @@ import {ChargingSystemModel} from "../models/charging-system.model";
 import {ChargingSystemAssignChargerModel} from "../models/charging-system-assign-charger.model";
 import {ChargerWithCartsModel} from "../models/charger-with-carts.model";
 import {ChargerAssignCartModel} from "../models/charger-assign-cart.model";
+import {ChargerDetachCartModel} from "../models/charger-detach-cart.model";
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,9 @@ export class ChargingSystemHttpService {
 
   assignCartToCharger(chargerAssignCartModel: ChargerAssignCartModel) {
     return this.httpClient.post<void>(`${BACKEND_URL}/charging-systems/charger/cart`, chargerAssignCartModel);
+  }
+
+  detachCart(detachCartModel: ChargerDetachCartModel) {
+    return this.httpClient.delete(`${BACKEND_URL}/charging-systems/charger/cart`, {body: detachCartModel});
   }
 }
