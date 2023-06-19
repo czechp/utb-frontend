@@ -7,5 +7,9 @@
       <app-charging-system-assign-charger (formSubmitted)="assignCharger($event)"
                                           [chargingSystemId]="(chargingSystem$|async)?.id"/>
     </mat-tab>
+    <mat-tab label="Usuń system">
+      <app-charging-system-remove (chargingSystemRemoved)="removeChargingSystem($event)"
+                                  [chargingSystemId]="(chargingSystem$| async)?.id"/>
+    </mat-tab>
   </mat-tab-group>
 </app-page>

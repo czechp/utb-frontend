@@ -19,6 +19,7 @@ import {
   ChargerAssignedCartsListComponent
 } from './components/charger-assigned-carts-list/charger-assigned-carts-list.component';
 import {ChargerAssignCartComponent} from './components/charger-assign-cart/charger-assign-cart.component';
+import {ChargingSystemRemoveComponent} from './components/charging-system-remove/charging-system-remove.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {ChargerAssignCartComponent} from './components/charger-assign-cart/charg
     ChargerRemoveComponent,
     ChargerAssignedCartsListComponent,
     ChargerAssignCartComponent,
+    ChargingSystemRemoveComponent,
   ],
   exports: [
     ChargingSystemsListComponent

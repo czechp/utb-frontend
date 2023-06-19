@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Observable} from "rxjs";
 import {ChargingSystemModel} from "../../models/charging-system.model";
 import {ChargingSystemHttpService} from "../../services/charging-system-http.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ChargingSystemAssignChargerModel} from "../../models/charging-system-assign-charger.model";
 import {StatementService} from "../../../service/statement.service";
 
@@ -16,7 +16,12 @@ export class ChargingSystemDetailsPageComponent {
   chargingSystem$: Observable<ChargingSystemModel> | null = null;
   tabPosition = 0;
 
-  constructor(private chargingSystemHttpService: ChargingSystemHttpService, private activatedRoute: ActivatedRoute, private statementService: StatementService) {
+  constructor(
+    private chargingSystemHttpService: ChargingSystemHttpService,
+    private activatedRoute: ActivatedRoute,
+    private statementService: StatementService,
+    private router: Router
+  ) {
     this.activatedRoute.params.subscribe({
       next: (params) => {
         this.chargingSystemId = params["id"];
@@ -38,5 +43,14 @@ export class ChargingSystemDetailsPageComponent {
           this.tabPosition = 0;
         }
       })
+  }
+
+  removeChargingSystem(chargingSystemId: number) {
+    this.chargingSystemHttpService.removeChargingSystem(chargingSystemId)
+      .subscribe({
+        next: () => {
+          this.router.navigate(["/"]);
+        }
+      });
   }
 }
