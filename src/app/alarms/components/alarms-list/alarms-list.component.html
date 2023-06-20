@@ -1,0 +1,19 @@
+<table>
+  <thead>
+  <tr>
+    <th>Data:</th>
+    <th>Typ:</th>
+    <th>System:</th>
+    <th>Prostownik:</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let alarm of alarms" [ngClass]="{notConfirmed: !alarm.confirmed}">
+    <td>{{alarm.createdAt | customDate}}</td>
+    <td>{{alarm.alarmType | alarmType}}</td>
+    <td>{{alarm.chargingSystemName}}</td>
+    <td>{{alarm.chargerPosition}}</td>
+  </tr>
+
+  </tbody>
+</table>
