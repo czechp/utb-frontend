@@ -13,6 +13,13 @@ import {ChargersListComponent} from './components/chargers-list/chargers-list.co
 import {
   ChargingSystemAssignChargerComponent
 } from './components/charging-system-assign-charger/charging-system-assign-charger.component';
+import {ChargerDetailsComponent} from './components/charger-details/charger-details.component';
+import {ChargerRemoveComponent} from './components/charger-remove/charger-remove.component';
+import {
+  ChargerAssignedCartsListComponent
+} from './components/charger-assigned-carts-list/charger-assigned-carts-list.component';
+import {ChargerAssignCartComponent} from './components/charger-assign-cart/charger-assign-cart.component';
+import {ChargingSystemRemoveComponent} from './components/charging-system-remove/charging-system-remove.component';
 
 
 @NgModule({
@@ -23,6 +30,11 @@ import {
     ChargingSystemDetailsPageComponent,
     ChargersListComponent,
     ChargingSystemAssignChargerComponent,
+    ChargerDetailsComponent,
+    ChargerRemoveComponent,
+    ChargerAssignedCartsListComponent,
+    ChargerAssignCartComponent,
+    ChargingSystemRemoveComponent,
   ],
   exports: [
     ChargingSystemsListComponent

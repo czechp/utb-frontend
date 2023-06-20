@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class PageComponent {
   @Input()
-  title: String = "";
+  title: String | undefined = "";
   @Input()
   loaded: boolean = true;
 }

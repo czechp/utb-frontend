@@ -1,0 +1,19 @@
+.cart {
+  width: 50%;
+  border: .1rem solid;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+}
+
+.removeIcon {
+  color: var(--danger);
+}
+
+.removeIcon:hover {
+  cursor: pointer;
+}
+

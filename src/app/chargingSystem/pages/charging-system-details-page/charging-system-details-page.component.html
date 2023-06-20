@@ -1,12 +1,15 @@
-<app-page [loaded]="!!(chargingSystem$|async)" title="System ładowania">
-  <!--  <app-charging-system-info [chargingSystem]="chargingSystem$ | async"/>-->
+<app-page [loaded]="!!(chargingSystem$|async)" [title]="(chargingSystem$ | async)?.name">
   <mat-tab-group [(selectedIndex)]="tabPosition">
     <mat-tab label="Prostowniki">
-      <app-chargers-list [chargers]="(chargingSystem$ | async)?.chargers"/>
+      <app-chargers-list (chargerRemoved)="getChargers()" [chargers]="(chargingSystem$ | async)?.chargers"/>
     </mat-tab>
     <mat-tab label="Dodaj prostownik">
       <app-charging-system-assign-charger (formSubmitted)="assignCharger($event)"
                                           [chargingSystemId]="(chargingSystem$|async)?.id"/>
+    </mat-tab>
+    <mat-tab label="Usuń system">
+      <app-charging-system-remove (chargingSystemRemoved)="removeChargingSystem($event)"
+                                  [chargingSystemId]="(chargingSystem$| async)?.id"/>
     </mat-tab>
   </mat-tab-group>
 </app-page>
