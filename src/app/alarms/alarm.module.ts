@@ -4,13 +4,19 @@ import {SharedModule} from "../shared.module";
 import {AlarmsPageComponent} from './pages/alarms-page/alarms-page.component';
 import {AlarmsListComponent} from './components/alarms-list/alarms-list.component';
 import {AlarmTypePipe} from './pipes/alarm-type.pipe';
+import {AlarmDetailsPageComponent} from './pages/alarm-details-page/alarm-details-page.component';
+import {AlarmInfoComponent} from './components/alarm-info/alarm-info.component';
+import {AlarmConfirmComponent} from './components/alarm-confirm/alarm-confirm.component';
 
 
 @NgModule({
   declarations: [
     AlarmsPageComponent,
     AlarmsListComponent,
-    AlarmTypePipe
+    AlarmTypePipe,
+    AlarmDetailsPageComponent,
+    AlarmInfoComponent,
+    AlarmConfirmComponent
   ],
   imports: [
     CommonModule,

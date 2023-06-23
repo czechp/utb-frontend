@@ -1,0 +1,36 @@
+<div class="container">
+  <mat-card [ngClass]="{alarmActivate: !alarm?.confirmed}">
+    <mat-card-content>
+      <p class="row">
+        <span>Id:</span>
+        <span>{{alarm?.id}}</span>
+      </p>
+      <p class="row">
+        <span>Data wystąpienia:</span>
+        <span>{{alarm?.createdAt | customDate}}</span>
+      </p>
+      <p class="row">
+        <span>System:</span>
+        <span>{{alarm?.chargingSystemName}}</span>
+      </p>
+      <p class="row">
+        <span>Prostownik:</span>
+        <span>{{alarm?.chargerPosition}}</span>
+      </p>
+      <p class="row">
+        <span>Typ alarmu:</span>
+        <span>{{alarm?.alarmType | alarmType}}</span>
+      </p>
+      <p class="row">
+        <span>Potwierdzony</span>
+        <span>{{alarm?.confirmed | yesOrNo}}</span>
+      </p>
+      <hr>
+      <p>
+        <i>
+          {{alarm?.description}}
+        </i>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

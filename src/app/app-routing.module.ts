@@ -23,6 +23,7 @@ import {
   ChargingSystemDetailsPageComponent
 } from "./chargingSystem/pages/charging-system-details-page/charging-system-details-page.component";
 import {AlarmsPageComponent} from "./alarms/pages/alarms-page/alarms-page.component";
+import {AlarmDetailsPageComponent} from "./alarms/pages/alarm-details-page/alarm-details-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: "charging-system-create", component: ChargingSystemCreatePageComponent, canActivate: [LoginGuard]},
   {path: "charging-system-details/:id", component: ChargingSystemDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "alarms", component: AlarmsPageComponent, canActivate: [LoginGuard]},
+  {path: "alarm-details/:id", component: AlarmDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "forbidden", component: ForbiddenComponent},
   {path: "login-required", component: LoginRequiredComponent},
   {path: "not-found", component: PageNotFoundComponent},

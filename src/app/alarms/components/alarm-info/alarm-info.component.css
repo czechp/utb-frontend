@@ -1,0 +1,4 @@
+.alarmActivate {
+  background-color: var(--danger);
+  color: var(--light);
+}

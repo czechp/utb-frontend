@@ -162,3 +162,8 @@ mat-card {
   padding: 1rem;
 }
 
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

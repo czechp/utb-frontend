@@ -1,0 +1,4 @@
+<app-page [loaded]="!!(alarm$ | async)" title="Szczegóły alarmu">
+  <app-alarm-info [alarm]="alarm$ | async"/>
+  <app-alarm-confirm (alarmConfirmed)="confirmAlarmRequest($event)" [alarm]="alarm$ |  async"/>
+</app-page>
