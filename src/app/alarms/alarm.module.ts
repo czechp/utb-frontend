@@ -7,6 +7,7 @@ import {AlarmTypePipe} from './pipes/alarm-type.pipe';
 import {AlarmDetailsPageComponent} from './pages/alarm-details-page/alarm-details-page.component';
 import {AlarmInfoComponent} from './components/alarm-info/alarm-info.component';
 import {AlarmConfirmComponent} from './components/alarm-confirm/alarm-confirm.component';
+import {AlarmAddDescriptionComponent} from './components/alarm-add-description/alarm-add-description.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {AlarmConfirmComponent} from './components/alarm-confirm/alarm-confirm.co
     AlarmTypePipe,
     AlarmDetailsPageComponent,
     AlarmInfoComponent,
-    AlarmConfirmComponent
+    AlarmConfirmComponent,
+    AlarmAddDescriptionComponent
   ],
   imports: [
     CommonModule,

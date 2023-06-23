@@ -4,6 +4,7 @@ import {AlarmModel} from "../models/alarm.model";
 import {BACKEND_URL} from "../../configuration/URL";
 import {share} from "rxjs";
 import {AlarmConfirmModel} from "../models/alarm.confirm.model";
+import {AlarmAddDescriptionModel} from "../models/alarm-add-description.model";
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,9 @@ export class AlarmHttpService {
   confirmAlarm(alarmId: number) {
     const alarmConfirmModel: AlarmConfirmModel = {alarmId}
     return this.httpClient.post<void>(`${BACKEND_URL}/alarms/confirm`, alarmConfirmModel).pipe(share());
+  }
+
+  addDescription(alarmAddDescriptionModel: AlarmAddDescriptionModel) {
+    return this.httpClient.post<void>(`${BACKEND_URL}/alarms/description`, alarmAddDescriptionModel).pipe(share());
   }
 }
