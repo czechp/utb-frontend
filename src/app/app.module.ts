@@ -22,6 +22,7 @@ import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
 import {AuthorizationInterceptor} from "./configuration/http/authorization.interceptor.service";
 import {CartModule} from "./cart/cart.module";
 import {ChargingSystemModule} from "./chargingSystem/charging-system.module";
+import {AlarmModule} from "./alarms/alarm.module";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {ChargingSystemModule} from "./chargingSystem/charging-system.module";
     AuthorizationModule,
     CartModule,
     ChargingSystemModule,
+    AlarmModule,
     SharedModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],

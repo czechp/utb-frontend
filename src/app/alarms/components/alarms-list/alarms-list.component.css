@@ -1,0 +1,4 @@
+.notConfirmed {
+  background-color: var(--danger);
+  color: var(--backgroundColor);
+}
