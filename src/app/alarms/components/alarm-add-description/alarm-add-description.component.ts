@@ -21,7 +21,9 @@ export class AlarmAddDescriptionComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.alarmAddDescriptionForm = createAlarmDescriptionForm(changes["alarm"].currentValue["description"]);
+    const currentDescription = changes["alarm"]?.currentValue?.description;
+    if (currentDescription)
+      this.alarmAddDescriptionForm = createAlarmDescriptionForm();
   }
 
   descriptionAddedClick() {

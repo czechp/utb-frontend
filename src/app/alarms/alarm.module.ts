@@ -8,6 +8,7 @@ import {AlarmDetailsPageComponent} from './pages/alarm-details-page/alarm-detail
 import {AlarmInfoComponent} from './components/alarm-info/alarm-info.component';
 import {AlarmConfirmComponent} from './components/alarm-confirm/alarm-confirm.component';
 import {AlarmAddDescriptionComponent} from './components/alarm-add-description/alarm-add-description.component';
+import {AlarmRemoveComponent} from './components/alarm-remove/alarm-remove.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {AlarmAddDescriptionComponent} from './components/alarm-add-description/a
     AlarmDetailsPageComponent,
     AlarmInfoComponent,
     AlarmConfirmComponent,
-    AlarmAddDescriptionComponent
+    AlarmAddDescriptionComponent,
+    AlarmRemoveComponent
   ],
   imports: [
     CommonModule,
