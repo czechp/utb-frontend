@@ -1,0 +1,14 @@
+<app-page [loaded]="!!(alarm$ | async)" title="Szczegóły alarmu">
+  <mat-tab-group [(selectedIndex)]="tabIndex">
+    <mat-tab label="Informacje">
+      <app-alarm-info [alarm]="alarm$ | async"/>
+      <app-alarm-confirm (alarmConfirmed)="confirmAlarmRequest($event)" [alarm]="alarm$ |  async"/>
+    </mat-tab>
+    <mat-tab label="Dodaj/Zmień opis">
+      <app-alarm-add-description (descriptionAdded)="addDescriptionRequest($event)" [alarm]="alarm$ | async"/>
+    </mat-tab>
+    <mat-tab label="Usuń">
+      <app-alarm-remove (alarmRemoved)="alarmRemoveRequest($event)" [alarm]="alarm$ | async"/>
+    </mat-tab>
+  </mat-tab-group>
+</app-page>

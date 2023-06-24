@@ -57,4 +57,8 @@ export class ChargingSystemHttpService {
   detachCart(detachCartModel: ChargerDetachCartModel) {
     return this.httpClient.delete(`${BACKEND_URL}/charging-systems/charger/cart`, {body: detachCartModel});
   }
+
+  removeChargingSystem(chargingSystemId: number) {
+    return this.httpClient.delete<void>(`${BACKEND_URL}/charging-systems/${chargingSystemId}`);
+  }
 }

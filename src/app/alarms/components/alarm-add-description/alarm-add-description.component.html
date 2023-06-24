@@ -1,0 +1,9 @@
+<div class="container">
+  <form (ngSubmit)="descriptionAddedClick()" [formGroup]="alarmAddDescriptionForm">
+    <mat-form-field>
+      <mat-label>Opis:</mat-label>
+      <textarea cols="30" formControlName="description" matInput rows="5"></textarea>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Zapisz opis</button>
+  </form>
+</div>
