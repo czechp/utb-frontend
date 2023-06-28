@@ -1,8 +1,9 @@
 <app-page [loaded]="!!(cart$|async)" title="Szczegóły wózka">
   <!--  remove selected index-->
   <mat-tab-group>
-    <mat-tab label="Informacje">
+    <mat-tab label="Ładowania">
       <app-cart-info [cart]="cart$ |async"/>
+      <app-chargings [chargings]="chargings$ | async"/>
     </mat-tab>
     <mat-tab label="Usuń">
       <app-cart-remove (formSubmitted)="removeCart($event)" [cartId]="(cart$| async)?.id"/>

@@ -8,6 +8,7 @@ import {CartInfoComponent} from './components/cart-info/cart-info.component';
 import {CartRemoveComponent} from './components/cart-remove/cart-remove.component';
 import {CartAddPageComponent} from './pages/cart-add-page/cart-add-page.component';
 import {CartAddFormComponent} from './components/cart-add-form/cart-add-form.component';
+import {ChargingModule} from "../charging/charging.module";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {CartAddFormComponent} from './components/cart-add-form/cart-add-form.com
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ChargingModule
   ]
 })
 export class CartModule {

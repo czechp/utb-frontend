@@ -1,0 +1,25 @@
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Id:</th>
+      <th>System:</th>
+      <th>Czas rozpoczęcia:</th>
+      <th>Czas zakończenia:</th>
+      <th>Czas trwania:</th>
+      <th>Błąd</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let charging of chargings" [ngClass]="{chargingFailed: charging.failed}">
+      <td>{{charging.id}}</td>
+      <td>{{charging.chargingSystemName}}</td>
+      <td>{{charging.createdAt | customDate}}</td>
+      <td *ngIf="charging.finishedAt">{{charging.finishedAt | customDate}}</td>
+      <td *ngIf="!charging.finishedAt">W trakcie</td>
+      <td>{{charging.duration}} min</td>
+      <td>{{charging.failed | yesOrNo}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

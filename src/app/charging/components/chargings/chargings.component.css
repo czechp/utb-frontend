@@ -1,0 +1,4 @@
+.chargingFailed {
+  background-color: var(--danger);
+  color: var(--light);
+}
