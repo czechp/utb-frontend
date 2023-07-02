@@ -4,6 +4,7 @@
     <tr>
       <th>Id:</th>
       <th>System:</th>
+      <th>Prostownik:</th>
       <th>Czas rozpoczęcia:</th>
       <th>Czas zakończenia:</th>
       <th>Czas trwania:</th>
@@ -14,6 +15,7 @@
     <tr *ngFor="let charging of chargings" [ngClass]="{chargingFailed: charging.failed}">
       <td>{{charging.id}}</td>
       <td>{{charging.chargingSystemName}}</td>
+      <td>{{charging.chargerPosition}}</td>
       <td>{{charging.createdAt | customDate}}</td>
       <td *ngIf="charging.finishedAt">{{charging.finishedAt | customDate}}</td>
       <td *ngIf="!charging.finishedAt">W trakcie</td>
