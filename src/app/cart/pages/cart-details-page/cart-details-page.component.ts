@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {StatementService} from "../../../service/statement.service";
 import {ChargingHttpService} from "../../../charging/services/charging-http.service";
 import {ChargingModel} from "../../../charging/models/charging.model";
+import {ChargingRemoveModel} from "../../../charging/models/charging-remove.model";
 
 @Component({
   selector: 'app-cart-details-page',
@@ -13,8 +14,9 @@ import {ChargingModel} from "../../../charging/models/charging.model";
   styleUrls: ['./cart-details-page.component.css']
 })
 export class CartDetailsPageComponent {
-  cart$: Observable<CartModel>;
-  chargings$: Observable<ChargingModel[]>;
+  cart$: Observable<CartModel> | undefined;
+  chargings$: Observable<ChargingModel[]> | undefined;
+  cartId: number;
 
   constructor(private cartHttpService: CartHttpService,
               private chargingHttpService: ChargingHttpService,
@@ -22,9 +24,23 @@ export class CartDetailsPageComponent {
               private statementService: StatementService,
               private router: Router
   ) {
-    const cartId = activatedRoute.snapshot.params["id"];
-    this.cart$ = this.cartHttpService.getCartById(cartId);
-    this.chargings$ = this.chargingHttpService.getChargingsByCartId(cartId);
+    this.cartId = activatedRoute.snapshot.params["id"];
+    this.getCart();
+    this.getChargings();
+  }
+
+  removeChargingRequest(chargingRemoveModel: ChargingRemoveModel) {
+    this.chargingHttpService.removeCharging(chargingRemoveModel)
+      .subscribe({
+        next: () => {
+          this.getChargings();
+          this.statementService.publicInfo("Ładowanie zostało usunięte");
+        }
+      })
+  }
+
+  private getChargings() {
+    this.chargings$ = this.chargingHttpService.getChargingsByCartId(this.cartId);
   }
 
   removeCart(cartId: number) {
@@ -39,5 +55,9 @@ export class CartDetailsPageComponent {
       this.statementService.publicInfo("Wózek został usunięty");
       this.router.navigate(["/carts"]);
     };
+  }
+
+  private getCart() {
+    this.cart$ = this.cartHttpService.getCartById(this.cartId);
   }
 }

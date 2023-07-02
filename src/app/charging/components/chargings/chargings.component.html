@@ -12,7 +12,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let charging of chargings" [ngClass]="{chargingFailed: charging.failed}">
+    <tr (click)="removeChargingModal(charging.id)" *ngFor="let charging of chargings"
+        [ngClass]="{chargingFailed: charging.failed}">
       <td>{{charging.id}}</td>
       <td>{{charging.chargingSystemName}}</td>
       <td>{{charging.chargerPosition}}</td>

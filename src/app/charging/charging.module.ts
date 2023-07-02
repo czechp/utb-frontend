@@ -6,7 +6,7 @@ import {ChargingsComponent} from './components/chargings/chargings.component';
 
 @NgModule({
   declarations: [
-    ChargingsComponent
+    ChargingsComponent,
   ],
   imports: [
     CommonModule,
