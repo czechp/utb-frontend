@@ -24,6 +24,7 @@ import {CartModule} from "./cart/cart.module";
 import {ChargingSystemModule} from "./chargingSystem/charging-system.module";
 import {AlarmModule} from "./alarms/alarm.module";
 import {ChargingModule} from "./charging/charging.module";
+import {NotificationModule} from "./notifications/notification.module";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {ChargingModule} from "./charging/charging.module";
     ChargingSystemModule,
     AlarmModule,
     ChargingModule,
+    NotificationModule,
     SharedModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],

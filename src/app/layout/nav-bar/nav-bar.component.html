@@ -31,8 +31,13 @@
     </div>
 
     <div class="dropdown">
-      <button [routerLink]="['/alarms']" class="dropbtn" color="primary" mat-raised-button>Alarmy</button>
+      <button class="dropbtn" color="primary" mat-raised-button>Alarmy</button>
+      <div class="dropdown-content">
+        <a [routerLink]="['/alarms']">Lista alarmów</a>
+        <a [routerLink]="['/notifications']">List adresów email</a>
+      </div>
     </div>
+
   </div>
   <hr>
 </div>
