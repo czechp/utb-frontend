@@ -1,0 +1,10 @@
+<div class="container">
+  <form [formGroup]="notificationSystemSelectorForm">
+    <mat-form-field>
+      <mat-label>Wybierz system</mat-label>
+      <mat-select formControlName="chargingSystemId">
+        <mat-option *ngFor="let system of chargingSystems" [value]="system.id">{{system.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
