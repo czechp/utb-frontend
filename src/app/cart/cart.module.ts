@@ -9,6 +9,7 @@ import {CartRemoveComponent} from './components/cart-remove/cart-remove.componen
 import {CartAddPageComponent} from './pages/cart-add-page/cart-add-page.component';
 import {CartAddFormComponent} from './components/cart-add-form/cart-add-form.component';
 import {ChargingModule} from "../charging/charging.module";
+import {CartModifyDescriptionComponent} from './components/cart-modify-description/cart-modify-description.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {ChargingModule} from "../charging/charging.module";
     CartRemoveComponent,
     CartAddPageComponent,
     CartAddFormComponent,
+    CartModifyDescriptionComponent,
   ],
   imports: [
     CommonModule,

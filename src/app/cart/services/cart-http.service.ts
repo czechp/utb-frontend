@@ -5,6 +5,7 @@ import {CartModel} from "../models/cart.model";
 import {share} from "rxjs";
 import {CartAddModel} from "../models/cart-add.model";
 import {CartListModel} from "../models/cart-list.model";
+import {CartAssignDescriptionModel} from "../models/cart-assign-description.model";
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,10 @@ export class CartHttpService {
 
   addCart(cartAddModel: CartAddModel) {
     return this.httpClient.post(`${BACKEND_URL}/carts`, cartAddModel);
+  }
+
+  assignDescription(cartAssignDescriptionModel: CartAssignDescriptionModel) {
+    return this.httpClient.patch<void>(`${BACKEND_URL}/carts/description`, cartAssignDescriptionModel)
+      .pipe(share());
   }
 }

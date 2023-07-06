@@ -1,0 +1,10 @@
+<div class="container">
+  <form (ngSubmit)="descriptionAssignedClick()" [formGroup]="assignDescriptionForm">
+    <mat-form-field>
+      <mat-label>Opis wózka</mat-label>
+      <textarea cols="30" formControlName="description" matInput placeholder="Wpisz opis dla wózka"
+                rows="10"></textarea>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Zapisz</button>
+  </form>
+</div>

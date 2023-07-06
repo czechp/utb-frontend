@@ -7,6 +7,7 @@ import {StatementService} from "../../../service/statement.service";
 import {ChargingHttpService} from "../../../charging/services/charging-http.service";
 import {ChargingModel} from "../../../charging/models/charging.model";
 import {ChargingRemoveModel} from "../../../charging/models/charging-remove.model";
+import {CartAssignDescriptionModel} from "../../models/cart-assign-description.model";
 
 @Component({
   selector: 'app-cart-details-page',
@@ -17,6 +18,7 @@ export class CartDetailsPageComponent {
   cart$: Observable<CartModel> | undefined;
   chargings$: Observable<ChargingModel[]> | undefined;
   cartId: number;
+  activeTab = 0;
 
   constructor(private cartHttpService: CartHttpService,
               private chargingHttpService: ChargingHttpService,
@@ -59,5 +61,16 @@ export class CartDetailsPageComponent {
 
   private getCart() {
     this.cart$ = this.cartHttpService.getCartById(this.cartId);
+  }
+
+  assignDescriptionRequest(cartAssignDescriptionModel: CartAssignDescriptionModel) {
+    this.cartHttpService.assignDescription(cartAssignDescriptionModel)
+      .subscribe({
+        next: () => {
+          this.statementService.publicInfo("Opis został zmieniony");
+          this.getCart();
+          this.activeTab = 0;
+        }
+      });
   }
 }
