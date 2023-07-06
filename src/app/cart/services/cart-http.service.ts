@@ -4,6 +4,7 @@ import {BACKEND_URL} from "../../configuration/URL";
 import {CartModel} from "../models/cart.model";
 import {share} from "rxjs";
 import {CartAddModel} from "../models/cart-add.model";
+import {CartListModel} from "../models/cart-list.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class CartHttpService {
   }
 
   public getCarts() {
-    return this.httpClient.get<CartModel[]>(`${BACKEND_URL}/carts`).pipe(share());
+    return this.httpClient.get<CartListModel[]>(`${BACKEND_URL}/carts`).pipe(share());
   }
 
   public getCartById(cartId: number) {
