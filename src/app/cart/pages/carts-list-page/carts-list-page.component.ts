@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {CartHttpService} from "../../services/cart-http.service";
 import {Observable} from "rxjs";
-import {CartModel} from "../../models/cart.model";
+import {CartListModel} from "../../models/cart-list.model";
 
 @Component({
   selector: 'app-carts-list-page',
@@ -9,7 +9,7 @@ import {CartModel} from "../../models/cart.model";
   styleUrls: ['./carts-list-page.component.css']
 })
 export class CartsListPageComponent {
-  carts$: Observable<CartModel[]>;
+  carts$: Observable<CartListModel[]>;
 
   constructor(private cartHttpService: CartHttpService) {
     this.carts$ = this.cartHttpService.getCarts();

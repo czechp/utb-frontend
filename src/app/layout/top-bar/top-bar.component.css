@@ -28,6 +28,7 @@
 }
 
 .fixed-container {
+  background-color: var(--backgroundColor);
   width: 100%;
   position: fixed;
   margin: 0;

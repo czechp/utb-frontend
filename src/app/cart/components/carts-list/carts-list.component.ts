@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {CartModel} from "../../models/cart.model";
 import {Router} from "@angular/router";
+import {CartListModel} from "../../models/cart-list.model";
 
 @Component({
   selector: 'app-carts-list',
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class CartsListComponent {
   @Input()
-  carts: CartModel[] | null = null;
+  carts: CartListModel[] | null = null;
 
   constructor(private router: Router) {
   }

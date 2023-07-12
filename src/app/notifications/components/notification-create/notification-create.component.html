@@ -1,0 +1,12 @@
+<div class="container">
+  <form #formRef="ngForm" (ngSubmit)="notificationCreatedClick()" [formGroup]="notificationCreateForm">
+    <mat-form-field>
+      <mat-label>Email:</mat-label>
+      <input formControlName="email" matInput type="text">
+      <mat-error
+        *ngIf="notificationCreateForm.get('email')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error *ngIf="notificationCreateForm.get('email')?.hasError('email')">{{ValidationMessages.email}}</mat-error>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Dodaj</button>
+  </form>
+</div>

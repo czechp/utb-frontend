@@ -1,0 +1,6 @@
+<div class="container">
+  <div *ngFor="let notification of notifications" class="notification">
+    <span>{{notification.email}}</span>
+    <fa-icon (click)="removeClick(notification.id)" [icon]="faRemoved" class="removeIcon" size="2x"/>
+  </div>
+</div>

@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           this.statementService.publicInfo("Nie masz wystarczających uprawnień do tej akcji");
           this.router.navigate(["/forbidden"]);
         } else {
-          const message = error.error?.message || "Nieznany błąd skontaktuj się z przczech@gmail.com";
+          const message = error.error?.message || "Nieznany błąd skontaktuj się z czechprz@gmail.com";
           this.statementService.publicInfo(message);
         }
 

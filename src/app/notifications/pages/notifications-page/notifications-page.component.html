@@ -1,0 +1,8 @@
+<app-page title="Adresaci email">
+  <app-notification-system-selector (chargingSystemSelected)="assignChargingSystem($event)"
+                                    [chargingSystems]="chargingSystems$ | async"/>
+  <app-notification-create (notificationCreated)="createNotificationRequest($event)"
+                           [chargingSystemId]="selectedChargingSystemId"/>
+  <app-notifications-list (notificationRemoved)="removeNotificationRequest($event)"
+                          [notifications]="notifications$ | async"/>
+</app-page>
