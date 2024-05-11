@@ -25,6 +25,9 @@ import {
 import {AlarmsPageComponent} from "./alarms/pages/alarms-page/alarms-page.component";
 import {AlarmDetailsPageComponent} from "./alarms/pages/alarm-details-page/alarm-details-page.component";
 import {NotificationsPageComponent} from "./notifications/pages/notifications-page/notifications-page.component";
+import {
+  ChargingSystemsPageComponent
+} from "./chargingSystem/pages/chargins-systems-page/charging-systems-page/charging-systems-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -32,6 +35,7 @@ const routes: Routes = [
   {path: "registration", component: RegistrationPageComponent},
   {path: "verification-token", component: VerificationTokenPageComponent},
   {path: "users", component: UsersPageComponent, canActivate: [LoginGuard, AdminGuard]},
+  {path: "charging-systems", component: ChargingSystemsPageComponent, canActivate: [LoginGuard, AdminGuard]},
   {path: "user-details/:id", component: UserDetailsPageComponent, canActivate: [LoginGuard, AdminGuard]},
   {path: "carts", component: CartsListPageComponent, canActivate: [LoginGuard]},
   {path: "cart-details/:id", component: CartDetailsPageComponent, canActivate: [LoginGuard]},
