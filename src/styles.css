@@ -113,7 +113,15 @@ body {
 
 table {
   margin-top: 2rem;
-  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+}
+
+table {
+  margin-top: 2rem;
   border-collapse: collapse;
 }
 
@@ -122,11 +130,19 @@ td {
 }
 
 table, th, td {
+  border: 1px solid transparent;
+}
+
+th, tr:not(:last-child) td {
   border-bottom: 1px solid;
 }
 
 th, td {
   padding: .7rem;
+}
+
+th:not(:last-child), td:not(:last-child) {
+  border-right: 1px solid;
 }
 
 tbody > tr:hover {
