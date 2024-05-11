@@ -23,6 +23,8 @@ import {ChargingSystemRemoveComponent} from './components/charging-system-remove
 import {
   ChargingSystemsPageComponent
 } from './pages/chargins-systems-page/charging-systems-page/charging-systems-page.component';
+import {ChargingSystemInfoComponent} from './components/charging-system-info/charging-system-info.component';
+import {ChargerStateDirective} from './directives/charger-state.directive';
 
 
 @NgModule({
@@ -39,9 +41,13 @@ import {
     ChargerAssignCartComponent,
     ChargingSystemRemoveComponent,
     ChargingSystemsPageComponent,
+    ChargingSystemInfoComponent,
+    ChargerStateDirective,
   ],
   exports: [
-    ChargingSystemsListComponent
+    ChargingSystemsListComponent,
+    ChargersListComponent,
+    ChargingSystemInfoComponent
   ],
   imports: [
     CommonModule,

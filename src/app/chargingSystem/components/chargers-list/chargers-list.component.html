@@ -1,22 +1,19 @@
-<table>
-  <thead>
-  <tr>
-    <th>Błąd</th>
-    <th>Pozycja</th>
-    <th>Wózek</th>
-    <th>Prąd</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr (click)="openDetailsDialog(charger.id)" *ngFor="let charger of chargers"
-      [ngClass]="{chargingInProgress: charger.charging}">
-    <td>
-      <fa-icon *ngIf="!charger.error" [icon]="okIcon" size="2x" style="color: var(--success)"/>
-      <fa-icon *ngIf="charger.error" [icon]="errorIcon" size="2x" style="color: var(--danger)"/>
-    </td>
-    <td>{{charger.position}}</td>
-    <td>{{charger.currentCart}}</td>
-    <td>{{charger.current}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Nr:</th>
+      <th>Wózek</th>
+      <th>Prąd</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="openDetailsDialog(charger.id)" *ngFor="let charger of chargers">
+      <td>{{ charger.position }}</td>
+      <td [appChargerState]="charger">{{ charger.currentCart }}</td>
+      <td>{{ charger.current }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
