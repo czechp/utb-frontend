@@ -5,6 +5,7 @@
     <th>Typ:</th>
     <th>System:</th>
     <th>Prostownik:</th>
+    <th>Komentarz:</th>
   </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
     <td>{{alarm.alarmType | alarmType}}</td>
     <td>{{alarm.chargingSystemName}}</td>
     <td>{{alarm.chargerPosition}}</td>
+    <td>{{ alarm.description || "" }}</td>
   </tr>
 
   </tbody>
