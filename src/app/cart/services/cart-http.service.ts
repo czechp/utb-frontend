@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BACKEND_URL} from "../../configuration/URL";
 import {CartModel} from "../models/cart.model";
-import {share} from "rxjs";
+import {Observable, share} from "rxjs";
 import {CartAddModel} from "../models/cart-add.model";
 import {CartListModel} from "../models/cart-list.model";
 import {CartAssignDescriptionModel} from "../models/cart-assign-description.model";
@@ -34,5 +34,13 @@ export class CartHttpService {
   assignDescription(cartAssignDescriptionModel: CartAssignDescriptionModel) {
     return this.httpClient.patch<void>(`${BACKEND_URL}/carts/description`, cartAssignDescriptionModel)
       .pipe(share());
+  }
+
+  getAssignedChargers(cartId: number): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${BACKEND_URL}/carts/assigned-chargers/${cartId}`);
+  }
+
+  removeChargingHistory(cartId: number) {
+    return this.httpClient.delete<void>(`${BACKEND_URL}/chargings/cart/${cartId}`).pipe();
   }
 }

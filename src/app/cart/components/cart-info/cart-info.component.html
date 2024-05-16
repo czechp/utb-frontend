@@ -4,6 +4,13 @@
     <mat-card-subtitle>Id: {{cart?.id}}</mat-card-subtitle>
     <mat-card-content>
       {{cart?.description}}
+      <br/>
+      <hr>
+      <h4><i>Przypisane prostowniki:</i></h4>
+      <ul>
+        <li *ngFor="let charger of assignedChargers">{{ charger }}</li>
+      </ul>
+
     </mat-card-content>
   </mat-card>
 </div>

@@ -13,7 +13,6 @@ export class ChargingSystemRemoveComponent {
   chargingSystemId: number | undefined = 0;
   @Output()
   chargingSystemRemoved = new EventEmitter<number>();
-
   constructor(public dialog: MatDialog) {
   }
 

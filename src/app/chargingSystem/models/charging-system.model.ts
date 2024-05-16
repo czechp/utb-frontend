@@ -10,6 +10,7 @@ export interface ChargerModel {
   current: number;
   charging: boolean;
   currentCart: string;
+  nameWithSystem: string;
 }
 
 export interface ChargingSystemModel {

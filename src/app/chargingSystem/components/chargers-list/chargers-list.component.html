@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr (click)="openDetailsDialog(charger.id)" *ngFor="let charger of chargers">
-      <td>{{ charger.position }}</td>
+      <td>{{ charger.nameWithSystem }}</td>
       <td [appChargerState]="charger">{{ charger.currentCart }}</td>
       <td>{{ charger.current.toFixed(2) }}</td>
     </tr>

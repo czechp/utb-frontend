@@ -19,6 +19,7 @@ export class CartDetailsPageComponent {
   chargings$: Observable<ChargingModel[]> | undefined;
   cartId: number;
   activeTab = 0;
+  assignedChargers$: Observable<string[]> | undefined;
 
   constructor(private cartHttpService: CartHttpService,
               private chargingHttpService: ChargingHttpService,
@@ -29,6 +30,7 @@ export class CartDetailsPageComponent {
     this.cartId = activatedRoute.snapshot.params["id"];
     this.getCart();
     this.getChargings();
+    this.getAssignedChargers();
   }
 
   removeChargingRequest(chargingRemoveModel: ChargingRemoveModel) {
@@ -72,5 +74,18 @@ export class CartDetailsPageComponent {
           this.activeTab = 0;
         }
       });
+  }
+
+  removeChargingHistory() {
+    this.cartHttpService.removeChargingHistory(this.cartId)
+      .subscribe(() => {
+        this.statementService.publicInfo("Historia ładowania została usunięta");
+        this.getChargings()
+      })
+
+  }
+
+  private getAssignedChargers() {
+    this.assignedChargers$ = this.cartHttpService.getAssignedChargers(this.cartId);
   }
 }

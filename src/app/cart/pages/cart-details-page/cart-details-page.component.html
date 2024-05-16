@@ -2,7 +2,8 @@
   <!--  remove selected index-->
   <mat-tab-group [(selectedIndex)]="activeTab">
     <mat-tab label="Ładowania">
-      <app-cart-info [cart]="cart$ |async"/>
+      <app-cart-info [assignedChargers]="assignedChargers$ | async" [cart]="cart$ | async"/>
+      <app-chargings-remove (chargingHistoryRemoved)="removeChargingHistory()" *appAdminAccess/>
       <app-chargings (charingRemoved)="removeChargingRequest($event)" [chargings]="chargings$ | async"/>
     </mat-tab>
     <mat-tab label="Modyfikuj opis">

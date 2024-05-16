@@ -9,4 +9,6 @@ import {CartModel} from "../../models/cart.model";
 export class CartInfoComponent {
   @Input()
   cart: CartModel | null = null;
+  @Input()
+  assignedChargers: string[] | null = null;
 }

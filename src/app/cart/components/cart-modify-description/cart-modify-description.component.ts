@@ -21,7 +21,7 @@ export class CartModifyDescriptionComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.assignDescriptionForm.setValue({description: changes["cart"].currentValue.description});
+    this.assignDescriptionForm.setValue({description: changes["cart"]?.currentValue?.description || ""});
   }
 
   descriptionAssignedClick() {
