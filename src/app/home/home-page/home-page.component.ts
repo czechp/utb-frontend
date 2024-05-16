@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ChargingSystemHttpService} from "../../chargingSystem/services/charging-system-http.service";
 import {Observable} from "rxjs";
 import {ChargingSystemModel} from "../../chargingSystem/models/charging-system.model";
@@ -9,9 +9,10 @@ import {ChargingSystemModel} from "../../chargingSystem/models/charging-system.m
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-  chargingSystems$: Observable<ChargingSystemModel[]>;
+  chargingSystems$: Observable<ChargingSystemModel[]>
+  private chargingSystemHttp = inject(ChargingSystemHttpService)
 
-  constructor(private chargingSystemHttpService: ChargingSystemHttpService) {
-    this.chargingSystems$ = this.chargingSystemHttpService.findAllChargingSystems();
+  constructor() {
+    this.chargingSystems$ = this.chargingSystemHttp.findAllChargingSystems()
   }
 }

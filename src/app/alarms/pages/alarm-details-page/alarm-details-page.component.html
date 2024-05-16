@@ -1,14 +1,16 @@
 <app-page [loaded]="!!(alarm$ | async)" title="Szczegóły alarmu">
+  <ng-container *ngIf="alarm$ | async as alarm">
   <mat-tab-group [(selectedIndex)]="tabIndex">
     <mat-tab label="Informacje">
-      <app-alarm-info [alarm]="alarm$ | async"/>
-      <app-alarm-confirm (alarmConfirmed)="confirmAlarmRequest($event)" [alarm]="alarm$ |  async"/>
+      <app-alarm-info [alarm]="alarm"/>
+      <app-alarm-confirm (alarmConfirmed)="confirmAlarmRequest($event)" [alarm]="alarm"/>
     </mat-tab>
     <mat-tab label="Dodaj/Zmień opis">
-      <app-alarm-add-description (descriptionAdded)="addDescriptionRequest($event)" [alarm]="alarm$ | async"/>
+      <app-alarm-add-description (descriptionAdded)="addDescriptionRequest($event)" [alarm]="alarm"/>
     </mat-tab>
     <mat-tab label="Usuń">
-      <app-alarm-remove (alarmRemoved)="alarmRemoveRequest($event)" [alarm]="alarm$ | async"/>
+      <app-alarm-remove (alarmRemoved)="alarmRemoveRequest($event)" [alarm]="alarm"/>
     </mat-tab>
   </mat-tab-group>
+  </ng-container>
 </app-page>

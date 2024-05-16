@@ -1,6 +1,20 @@
-.chargingInProgress {
-  background-color: var(--primary);
-  color: var(--backgroundColor);
+.container {
+  margin-top: 0;
 }
 
+table {
+  margin-top: 1rem;
+}
+
+.charger-charging {
+  background-color: yellow;
+}
+
+.charger-charging-finished {
+  background-color: var(--success);
+}
+
+.charger-error {
+  background-color: var(--danger);
+}
 

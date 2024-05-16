@@ -8,5 +8,5 @@ import {AlarmModel} from "../../models/alarm.model";
 })
 export class AlarmInfoComponent {
   @Input()
-  alarm: AlarmModel | null = null;
+  alarm!: AlarmModel;
 }

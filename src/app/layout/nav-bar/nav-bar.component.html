@@ -14,7 +14,7 @@
     <div class="dropdown">
       <button class="dropbtn" color="primary" mat-raised-button>Systemy</button>
       <div class="dropdown-content">
-        <a [routerLink]="['/']">List systemów</a>
+        <a [routerLink]="['/charging-systems']">List systemów</a>
         <a [routerLink]="['/charging-system-create']">Dodaj system</a>
         <a *ngFor="let system of (chargingSystems$ | async)"
            [routerLink]="['/charging-system-details', system.id]">{{system.name}}</a>

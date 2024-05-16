@@ -64,4 +64,8 @@ export class AuthorizationService {
       this.store.dispatch(new LoginAction(this.readCredentials() as UserCredentials));
     }
   }
+
+  isAdmin() {
+    return this.getRole() === "ADMIN"
+  }
 }

@@ -1,3 +1,9 @@
-<app-page [loaded]="!!(chargingSystems$| async)" title="Strona główna">
-  <app-charging-systems-list [systems]="(chargingSystems$ | async)"/>
+<app-page [loaded]="!!(chargingSystems$ | async)" title="Strona główna">
+  <div class="container">
+    <div *ngIf="chargingSystems$ | async as chargingSystems" class="systems-container">
+      <div *ngFor="let chargingSystem of chargingSystems">
+        <app-charging-system-info [chargingSystem]="chargingSystem"/>
+      </div>
+    </div>
+  </div>
 </app-page>

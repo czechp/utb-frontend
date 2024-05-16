@@ -6,4 +6,6 @@ export interface AlarmModel {
   confirmed: boolean;
   description: string;
   chargingSystemName: string;
+  confirmedBy: string
+  confirmedAt: Date
 }

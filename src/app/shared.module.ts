@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
 import {MatTableModule} from "@angular/material/table";
 import {MatTabsModule} from "@angular/material/tabs";
+import {AdminAccessDirective} from "./directive/admin-access.directive";
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     YesOrNoPipe,
     CustomDatePipe,
     ConfirmationDialogComponent,
+    AdminAccessDirective
   ],
   imports: [
     CommonModule,
@@ -58,7 +60,8 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatInputModule,
     MatTableModule,
     MatTabsModule,
-    FormsModule
+    FormsModule,
+    AdminAccessDirective
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {width: "1000px"}}]
 })
