@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {CartModel} from "../../models/cart.model";
 import {CartHttpService} from "../../services/cart-http.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -8,6 +8,7 @@ import {ChargingHttpService} from "../../../charging/services/charging-http.serv
 import {ChargingModel} from "../../../charging/models/charging.model";
 import {ChargingRemoveModel} from "../../../charging/models/charging-remove.model";
 import {CartAssignDescriptionModel} from "../../models/cart-assign-description.model";
+import {ChargingFilterModel} from "../../../charging/models/charing-filter.model";
 
 @Component({
   selector: 'app-cart-details-page',
@@ -16,7 +17,7 @@ import {CartAssignDescriptionModel} from "../../models/cart-assign-description.m
 })
 export class CartDetailsPageComponent {
   cart$: Observable<CartModel> | undefined;
-  chargings$: Observable<ChargingModel[]> | undefined;
+  chargings$ = new BehaviorSubject<ChargingModel[]>([]);
   cartId: number;
   activeTab = 0;
   assignedChargers$: Observable<string[]> | undefined;
@@ -44,7 +45,8 @@ export class CartDetailsPageComponent {
   }
 
   private getChargings() {
-    this.chargings$ = this.chargingHttpService.getChargingsByCartId(this.cartId);
+    this.chargingHttpService.getChargingsByCartId(this.cartId)
+      .subscribe(result=>this.chargings$.next(result));
   }
 
   removeCart(cartId: number) {
@@ -76,16 +78,24 @@ export class CartDetailsPageComponent {
       });
   }
 
-  removeChargingHistory() {
-    this.cartHttpService.removeChargingHistory(this.cartId)
-      .subscribe(() => {
-        this.statementService.publicInfo("Historia ładowania została usunięta");
-        this.getChargings()
+  removeChargingHistory(timeSpan: ChargingFilterModel) {
+    this.chargingHttpService.removeChargingByCartIdInTimeSpan(this.cartId, timeSpan)
+      .subscribe(()=>{
+        this.getChargings();
+        this.statementService.publicInfo("Ładowania w wyznaczonym zakresie zostały usunięte");
       })
-
   }
 
   private getAssignedChargers() {
     this.assignedChargers$ = this.cartHttpService.getAssignedChargers(this.cartId);
+  }
+
+  timeRangeSelected(timeSpan: ChargingFilterModel) {
+    this.chargingHttpService.getChargingsByCartIdInTimeSpan(this.cartId, timeSpan)
+    .subscribe(result => this.chargings$.next(result));
+  }
+
+  clearTimeFilter() {
+    this.getChargings();
   }
 }

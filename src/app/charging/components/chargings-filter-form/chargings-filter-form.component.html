@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="chargingFilterForm" (ngSubmit)="timeRangeSelected()">
+  <span>
+      <label>Od: </label>
+      <input type="date" formControlName="from">
+  </span>
+    <span>
+    <label>Do: </label>
+    <input type="date" formControlName="to">
+  </span>
+    <button color="primary" mat-raised-button>Filtruj</button>
+  </form>
+  <form (ngSubmit)="clearTimeFilter()">
+    <button color="primary" mat-raised-button>Pokaż wszystkie</button>
+  </form>
+
+</div>

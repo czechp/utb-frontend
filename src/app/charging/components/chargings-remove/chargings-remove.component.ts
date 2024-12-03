@@ -1,7 +1,10 @@
 import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {ConfirmationDialogModel} from "../../../component/confirmation-dialog/confirmation-dialog.model";
-import {ConfirmationDialogComponent} from "../../../component/confirmation-dialog/confirmation-dialog.component";
+import {
+  ChargingRemoveDialogAction,
+  ChargingsRemoveDialogComponent
+} from "../chargings-remove-dialog/chargings-remove-dialog.component";
+import {ChargingFilterModel} from "../../models/charing-filter.model";
 
 @Component({
   selector: 'app-chargings-remove',
@@ -10,18 +13,17 @@ import {ConfirmationDialogComponent} from "../../../component/confirmation-dialo
 })
 export class ChargingsRemoveComponent {
   @Output()
-  chargingHistoryRemoved = new EventEmitter<void>()
+  chargingHistoryRemoved = new EventEmitter<ChargingFilterModel>()
   private dialog = inject(MatDialog)
 
   onRemoved() {
-    const data: ConfirmationDialogModel = {
-      title: "Potwierdzenie usunięcia historii ładowania",
-      content: "Czy jesteś pewny, że chcesz usunąć całą historię ładowań",
-      confirm: () => {
-        this.chargingHistoryRemoved.emit()
+    const data: ChargingRemoveDialogAction = {
+      confirm: (span: ChargingFilterModel) => {
+        this.chargingHistoryRemoved.emit(span);
+        this.dialog.closeAll();
       }
     }
 
-    this.dialog.open(ConfirmationDialogComponent, {data})
+    this.dialog.open(ChargingsRemoveDialogComponent, {data})
   }
 }

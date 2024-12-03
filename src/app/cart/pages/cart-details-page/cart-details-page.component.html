@@ -3,7 +3,8 @@
   <mat-tab-group [(selectedIndex)]="activeTab">
     <mat-tab label="Ładowania">
       <app-cart-info [assignedChargers]="assignedChargers$ | async" [cart]="cart$ | async"/>
-      <app-chargings-remove (chargingHistoryRemoved)="removeChargingHistory()" *appAdminAccess/>
+      <app-chargings-remove (chargingHistoryRemoved)="removeChargingHistory($event)" *appAdminAccess/>
+      <app-chargings-filter-form (filterTimeSelected)="timeRangeSelected($event)" (timeFilterCleared)="clearTimeFilter()"/>
       <app-chargings (charingRemoved)="removeChargingRequest($event)" [chargings]="chargings$ | async"/>
     </mat-tab>
     <mat-tab label="Modyfikuj opis">
