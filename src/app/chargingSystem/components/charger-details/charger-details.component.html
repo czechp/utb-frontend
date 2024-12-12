@@ -1,6 +1,11 @@
 <mat-dialog-content>
   <h1>Prostownik na pozycji {{(chargerWithCart$ | async)?.position}}</h1>
   <app-charger-remove (removeChargerEvent)="removeCharger($event)" [charger]="chargerWithCart$ | async"/>
+  <div class="charts-container">
+    <form method="dialog">
+      <button mat-raised-button color="primary" (click)="navigateToCharts()">Wykresy prądowe</button>
+    </form>
+  </div>
   <app-charger-assign-cart (cartAssigned)="assignCartRequest($event)"/>
   <app-charger-assigned-carts-list (cartDetached)="detachCartRequest($event)"
                                    [assignedCarts]="(chargerWithCart$ | async)?.carts"/>

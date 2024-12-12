@@ -1,0 +1,2 @@
+<app-current-measured-filter-form *ngIf="measuresGetForm$ | async as measureGetForm" [filterForm]=measureGetForm />
+<app-current-measures-chart *ngIf="measures$ | async as measures" [measures]="measures" />

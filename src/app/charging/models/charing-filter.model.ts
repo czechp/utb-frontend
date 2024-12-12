@@ -11,7 +11,7 @@ export type ChargingFilterForm = {
   to: FormControl<string | null>,
 }
 
-export function createCharingFilterForm(): FormGroup<ChargingFilterForm> {
+export function createChargingFilterForm(): FormGroup<ChargingFilterForm> {
   const today = new Date().toISOString().slice(0, 10);
   return new FormGroup({
     from: new FormControl(today),

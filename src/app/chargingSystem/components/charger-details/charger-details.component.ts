@@ -78,4 +78,9 @@ export class ChargerDetailsComponent {
         }
       })
   }
+
+  navigateToCharts() {
+    this.chargerModalData.close();
+    this.router.navigate(["charger-measures", this.chargerModalData.chargerId]);
+  }
 }

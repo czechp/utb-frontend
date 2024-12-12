@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {ChargingFilterModel, createCharingFilterForm} from "../../models/charing-filter.model";
+import {ChargingFilterModel, createChargingFilterForm} from "../../models/charing-filter.model";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 export type ChargingRemoveDialogAction = {
@@ -12,7 +12,7 @@ export type ChargingRemoveDialogAction = {
   styleUrls: ['./chargings-remove-dialog.component.css']
 })
 export class ChargingsRemoveDialogComponent {
-  removeChargingsForm = createCharingFilterForm();
+  removeChargingsForm = createChargingFilterForm();
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: ChargingRemoveDialogAction) {
   }

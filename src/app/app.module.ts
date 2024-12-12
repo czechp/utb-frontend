@@ -25,6 +25,7 @@ import {ChargingSystemModule} from "./chargingSystem/charging-system.module";
 import {AlarmModule} from "./alarms/alarm.module";
 import {ChargingModule} from "./charging/charging.module";
 import {NotificationModule} from "./notifications/notification.module";
+import {CurrentMeasuresModule} from "./current-measures/current-measures.module";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {NotificationModule} from "./notifications/notification.module";
     ChargingModule,
     NotificationModule,
     SharedModule,
+    CurrentMeasuresModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],
   providers: [

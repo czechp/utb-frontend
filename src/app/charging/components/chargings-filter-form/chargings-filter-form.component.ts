@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {ChargingFilterModel, createCharingFilterForm} from "../../models/charing-filter.model";
+import {ChargingFilterModel, createChargingFilterForm} from "../../models/charing-filter.model";
 
 @Component({
   selector: 'app-chargings-filter-form',
@@ -7,7 +7,7 @@ import {ChargingFilterModel, createCharingFilterForm} from "../../models/charing
   styleUrls: ['./chargings-filter-form.component.css']
 })
 export class ChargingsFilterFormComponent {
-  chargingFilterForm = createCharingFilterForm();
+  chargingFilterForm = createChargingFilterForm();
   @Output()
   filterTimeSelected = new EventEmitter<ChargingFilterModel>();
   @Output()
