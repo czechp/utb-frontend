@@ -28,9 +28,13 @@ import {NotificationsPageComponent} from "./notifications/pages/notifications-pa
 import {
   ChargingSystemsPageComponent
 } from "./chargingSystem/pages/chargins-systems-page/charging-systems-page/charging-systems-page.component";
+import {
+  CurrentMeasureChargerPageComponent
+} from "./current-measures/page/current-measure-charger-page/current-measure-charger-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
+  {path: "charger-measures/:id", component: CurrentMeasureChargerPageComponent, canActivate: [LoginGuard]},
   {path: "login", component: LoginPageComponent},
   {path: "registration", component: RegistrationPageComponent},
   {path: "verification-token", component: VerificationTokenPageComponent},

@@ -1,0 +1,13 @@
+<form [formGroup]="filterForm" method="dialog" class="form-container">
+  <label>Dzień</label>
+  <input matInput type="date" formControlName="day">
+  <label>Od</label>
+  <select formControlName="startHour">
+    <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</option>
+  </select>
+  <label>Do</label>
+  <select formControlName="endHour">
+    <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</option>
+    <option value="23:59">23:59</option>
+  </select>
+</form>
