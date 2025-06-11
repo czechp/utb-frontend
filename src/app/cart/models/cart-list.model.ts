@@ -3,5 +3,6 @@ export interface CartListModel {
   umupNumber: string;
   description: string;
   correctChargings: number,
-  failedChargings: number
+  failedChargings: number,
+  systemName: string
 }

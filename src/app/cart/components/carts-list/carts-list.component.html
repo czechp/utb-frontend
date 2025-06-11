@@ -4,6 +4,7 @@
     <tr>
       <th>Id:</th>
       <th>Umup:</th>
+      <th>Lokalizacja:</th>
       <th>Opis:</th>
       <th>Poprawnych<br/>ładowań:</th>
       <th>Niepoprawnych<br/> ładowań:</th>
@@ -13,6 +14,7 @@
     <tr (click)="navigateToDetails(cart.id)" *ngFor="let cart of carts">
       <td>{{cart.id}}</td>
       <td>{{cart.umupNumber}}</td>
+      <td>{{cart.systemName}}</td>
       <td>{{cart.description}}</td>
       <td>{{cart.correctChargings}}</td>
       <td>{{cart.failedChargings}}</td>
