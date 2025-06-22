@@ -1,0 +1,14 @@
+<div class="container">
+  <form method="dialog" [formGroup]="filterForm">
+    <label>Początek zakresu</label>
+    <input type="date" formControlName="from">
+    <label>Koniec zakresu</label>
+    <input type="date" formControlName="to">
+  </form>
+
+  <div class="button-container">
+    <button color="primary" mat-raised-button (click)="generateOnClick()">Generuj</button>
+    <button color="primary" mat-raised-button>Zapisz do pliku</button>
+  </div>
+
+</div>

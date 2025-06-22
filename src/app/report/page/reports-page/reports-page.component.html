@@ -1,0 +1,2 @@
+<app-reports-filter-form [filterForm]="filterForm" (generate)="generateReport()"/>
+<app-report-rows-list *ngIf="reportsRow$ | async as reportRows" [reportRows]="reportRows"/>

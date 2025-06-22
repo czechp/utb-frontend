@@ -1,0 +1,23 @@
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Lp.</th>
+      <th>Umup</th>
+      <th>Ilość ładowań</th>
+      <th>Suma czasu ładowania [H]</th>
+      <th>Średni prąd [A]</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of reportRows">
+        <td>{{row.orderNumber}}</td>
+        <td>{{row.umupNumber}}</td>
+        <td>{{row.chargingAmount}}</td>
+        <td>{{row.totalTime}}</td>
+        <td>{{row.averageCurrent}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
