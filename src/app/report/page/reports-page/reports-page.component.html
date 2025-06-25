@@ -1,2 +1,6 @@
 <app-reports-filter-form [filterForm]="filterForm" (generate)="generateReport()"/>
+<div class="spinner-container" *ngIf="loaded$ | async as loaded">
+    <mat-spinner diameter="300" style="margin-top:10rem"></mat-spinner>
+    <p class="report-info">Generowanie raportu... Proszę czekać to może potrwać nawet do 20s...</p>
+</div>
 <app-report-rows-list *ngIf="reportsRow$ | async as reportRows" [reportRows]="reportRows"/>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ReportsPageStateService} from "../../service/reports-page-state.service";
 
 @Component({
@@ -10,6 +10,7 @@ import {ReportsPageStateService} from "../../service/reports-page-state.service"
 export class ReportsPageComponent {
   filterForm = this.stateService.filterForm;
   reportsRow$ = this.stateService.reports$;
+  loaded$= this.stateService.loaded$;
 
   constructor(private stateService: ReportsPageStateService) {
 

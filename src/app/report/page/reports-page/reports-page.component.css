@@ -1,0 +1,13 @@
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-info {
+  text-align: center;
+  font-style: italic;
+  font-size: x-large;
+  margin-top: 3rem;
+}

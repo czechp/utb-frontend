@@ -5,6 +5,7 @@ import { ReportsFilterFormComponent } from './component/reports-filter-form/repo
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "../shared.module";
 import { ReportRowsListComponent } from './component/report-rows-list/report-rows-list.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 
@@ -14,10 +15,11 @@ import { ReportRowsListComponent } from './component/report-rows-list/report-row
     ReportsFilterFormComponent,
     ReportRowsListComponent
   ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        SharedModule,
+        MatProgressSpinnerModule
+    ]
 })
 export class ReportModule { }
