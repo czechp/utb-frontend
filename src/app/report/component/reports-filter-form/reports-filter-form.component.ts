@@ -10,8 +10,13 @@ import {ReportFilterForm} from "../../model/report.model";
 export class ReportsFilterFormComponent {
   @Input() filterForm!: FormGroup<ReportFilterForm>;
   @Output() generate = new EventEmitter<void>();
+  @Output() downloadReport = new EventEmitter<void>();
 
   generateOnClick() {
     this.generate.emit();
+  }
+
+  downloadOnClick(){
+    this.downloadReport.emit();
   }
 }

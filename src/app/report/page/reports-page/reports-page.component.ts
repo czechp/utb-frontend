@@ -19,4 +19,8 @@ export class ReportsPageComponent {
   generateReport() {
     this.stateService.generateReport();
   }
+
+  downloadReport() {
+    this.stateService.downloadReport();
+  }
 }

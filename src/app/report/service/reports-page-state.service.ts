@@ -26,4 +26,19 @@ export class ReportsPageStateService {
       this.loaded$.next(false);
     });
   }
+
+  downloadReport() {
+    const range = this.filterForm.value as { from: string, to: string };
+    this.loaded$.next(true);
+    return this.httpService.downloadReport(range.from, range.to)
+      .subscribe(blob => {
+        this.loaded$.next(false);
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'raport-utb.xlsx';
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+  }
 }
