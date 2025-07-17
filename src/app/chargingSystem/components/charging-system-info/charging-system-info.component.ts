@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ChargingSystemModel} from "../../models/charging-system.model";
+import {faCircleExclamation, faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-charging-system-info',
@@ -9,4 +10,6 @@ import {ChargingSystemModel} from "../../models/charging-system.model";
 export class ChargingSystemInfoComponent {
   @Input()
   chargingSystem!: ChargingSystemModel
+  protected readonly faCircleExclamation = faCircleExclamation;
+  protected readonly faTriangleExclamation = faTriangleExclamation;
 }

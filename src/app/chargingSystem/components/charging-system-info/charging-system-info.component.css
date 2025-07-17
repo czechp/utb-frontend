@@ -8,3 +8,12 @@ header {
   font-style: italic;
 }
 
+.connection-error{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}

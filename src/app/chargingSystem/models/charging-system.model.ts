@@ -20,4 +20,5 @@ export interface ChargingSystemModel {
   address: string;
   networkMask: string;
   error: boolean;
+  connectionError: boolean;
 }

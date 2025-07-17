@@ -1,4 +1,8 @@
 <div class="charging-system-info-container">
+  <div class="connection-error" *ngIf="chargingSystem.connectionError">
+    <fa-icon [icon]="faTriangleExclamation" size="4x" style="color: var(--danger)"></fa-icon>
+    <span class="error-message">Brak połączenia z siecią</span>
+  </div>
   <header class="systemName">{{ chargingSystem.name }}</header>
   <app-chargers-list [chargers]="chargingSystem.chargers"/>
 </div>
