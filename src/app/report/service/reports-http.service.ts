@@ -14,4 +14,12 @@ export class ReportsHttpService {
   getReport(from: string, to: string): Observable<ReportRow[]> {
     return this.http.get<ReportRow[]>(`${BACKEND_URL}/reports`, {params: {from, to}});
   }
+
+  downloadReport(from: string, to: string) {
+    const params = {from, to};
+    return this.http.get(`${BACKEND_URL}/reports/file`, {
+      params,
+      responseType: 'blob'
+    });
+  }
 }
