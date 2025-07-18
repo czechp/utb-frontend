@@ -13,7 +13,7 @@
     <td>{{alarm.createdAt | customDate}}</td>
     <td>{{alarm.alarmType | alarmType}}</td>
     <td>{{alarm.chargingSystemName}}</td>
-    <td>{{alarm.chargerPosition}}</td>
+    <td>{{alarm.chargerPosition !== 0 ? alarm.chargerPosition : ''}}</td>
     <td>{{ alarm.description || "" }}</td>
   </tr>
 

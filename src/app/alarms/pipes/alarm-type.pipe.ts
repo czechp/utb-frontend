@@ -14,6 +14,10 @@ export class AlarmTypePipe implements PipeTransform {
         return "Ładownie na niewłaściwym prostowniku";
       case "CHARGING_WITHOUT_CART":
         return "Ładownie bez tagu RFID"
+      case "CONNECTION_LOST":
+        return "Utracono połączenie z siecią";
+      case "CONNECTION_RESTORE":
+        return "Przywrócono połączenie z siecią";
       default:
         return "Nie rozpoznano błędu";
     }
