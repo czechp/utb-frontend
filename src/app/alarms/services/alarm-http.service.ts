@@ -19,6 +19,10 @@ export class AlarmHttpService {
     return this.httpClient.get<AlarmModel[]>(`${BACKEND_URL}/alarms`).pipe(share());
   }
 
+  getConnectionAlarms(){
+    return this.httpClient.get<AlarmModel[]>(`${BACKEND_URL}/connection-errors`).pipe(share());
+  }
+
   getAlarmById(alarmId: number) {
     return this.httpClient.get<AlarmModel>(`${BACKEND_URL}/alarms/${alarmId}`).pipe(share());
   }

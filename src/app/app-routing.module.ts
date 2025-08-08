@@ -32,6 +32,9 @@ import {
   CurrentMeasureChargerPageComponent
 } from "./current-measures/page/current-measure-charger-page/current-measure-charger-page.component";
 import {ReportsPageComponent} from "./report/page/reports-page/reports-page.component";
+import {
+  AlarmsConnectionErrorPageComponent
+} from "./alarms/pages/alarms-connection-error-page/alarms-connection-error-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -48,6 +51,7 @@ const routes: Routes = [
   {path: "charging-system-create", component: ChargingSystemCreatePageComponent, canActivate: [LoginGuard]},
   {path: "charging-system-details/:id", component: ChargingSystemDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "alarms", component: AlarmsPageComponent, canActivate: [LoginGuard]},
+  {path: "connection-alarms", component: AlarmsConnectionErrorPageComponent, canActivate: [LoginGuard]},
   {path: "alarm-details/:id", component: AlarmDetailsPageComponent, canActivate: [LoginGuard]},
   {path: "notifications", component: NotificationsPageComponent, canActivate: [LoginGuard]},
   {path: "reports", component: ReportsPageComponent, canActivate: [LoginGuard]},

@@ -9,18 +9,22 @@ import {AlarmInfoComponent} from './components/alarm-info/alarm-info.component';
 import {AlarmConfirmComponent} from './components/alarm-confirm/alarm-confirm.component';
 import {AlarmAddDescriptionComponent} from './components/alarm-add-description/alarm-add-description.component';
 import {AlarmRemoveComponent} from './components/alarm-remove/alarm-remove.component';
+import {
+  AlarmsConnectionErrorPageComponent
+} from "./pages/alarms-connection-error-page/alarms-connection-error-page.component";
 
 
 @NgModule({
   declarations: [
     AlarmsPageComponent,
+    AlarmsConnectionErrorPageComponent,
     AlarmsListComponent,
     AlarmTypePipe,
     AlarmDetailsPageComponent,
     AlarmInfoComponent,
     AlarmConfirmComponent,
     AlarmAddDescriptionComponent,
-    AlarmRemoveComponent
+    AlarmRemoveComponent,
   ],
   imports: [
     CommonModule,
